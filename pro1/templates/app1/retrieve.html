@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+    <table border="2px black">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>PHONE NO</th>
+                <th>ROOMS</th>
+                <th>AC/NON-AC</th>
+                <th>GENDER</th>
+                <th colspan="2">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in form %}
+            <tr>
+                <td>{{ i.id }}</td>
+                <td>{{ i.f_name }}</td>
+                <td>{{ i.s_name }}</td>
+                <td>{{ i.mobile_no }}</td>
+                <td>{{ i.rooms }}</td>
+                <td>{{ i.ac }}</td>
+                <td>{{ i.gender }}</td>
+                <td>
+                    <a href="{% url 'update_url' i.id %}">
+                        <button>UPDATE</button>
+                    </a>
+                </td>
+                <td>
+                    <a href="{% url 'delete_url' i.id %}">
+                        <button>DELETE</button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+</body>
