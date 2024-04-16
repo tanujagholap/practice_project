@@ -45,5 +45,6 @@ def delete_view(request, pk):
     template_name = 'app1/confirm.html'
     if request.method == 'POST':
         obj.delete()
+        return redirect('retrieve_url')
     return render(request, template_name)
 
