@@ -11,3 +11,4 @@ class Create(models.Model):
     rooms = models.IntegerField()
     ac = models.CharField(max_length=10, choices=choice1)
     gender = models.CharField(max_length=10, choices=choice2)
+

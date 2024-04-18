@@ -3,6 +3,7 @@
 
 <body>
 {% block content %}
+<center>
     <form method="post">
         {% csrf_token %}
 
@@ -10,12 +11,13 @@
         <input type="text" name="un">
         <br><br>
 
-        <label>USERNAME</label>
+        <label>PASSWORD</label>
         <input type="password" name="pw">
         <br><br>
 
         <input type="submit" value="login">
 
     </form>
+</center>
 {% endblock %}
 </body>

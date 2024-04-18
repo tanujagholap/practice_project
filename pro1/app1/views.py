@@ -1,3 +1,6 @@
+from django.conf import settings
+from django.core.mail import send_mail
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from .forms import *
 from .models import *
@@ -47,4 +50,5 @@ def delete_view(request, pk):
         obj.delete()
         return redirect('retrieve_url')
     return render(request, template_name)
+
 
